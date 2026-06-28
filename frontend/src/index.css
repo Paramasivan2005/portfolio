@@ -28,3 +28,26 @@
 html {
   scroll-behavior: smooth;
 }
+
+.swiper {
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  transform: scale(.82);
+  opacity: .45;
+  transition: .4s;
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.swiper-slide-active .card {
+  box-shadow: 0 25px 60px rgba(124,58,237,.25);
+}
+
+.swiper-pagination-bullet-active{
+  background:#7c3aed !important;
+}

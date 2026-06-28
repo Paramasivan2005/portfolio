@@ -21,7 +21,7 @@ const About = () => {
     <div id="about" className="scroll-mt-10 md:p-10 w-full flex flex-col md:flex md:flex-row">
       <div className="flex flex-col gap-10 px-10 md:flex md:flex-row">
         {/* left side and top side */}
-        <div className="md:w-[45%] lg:w-[25%] h-fit relative bg-green-300">
+        <div className="md:w-[45%] lg:w-[25%] h-fit relative shadow-2xl">
           <img src={profile} alt="profile" className="shadow-lg rounded-lg" />
           <div className="backdrop-blur-xl rounded-lg px-1 md:px-5 py-3 flex flex-col absolute -bottom-8 left-5 md:left-0 lg:left-3">
             <p className="text-white font-bold md:text-sm text-xs">
