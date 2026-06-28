@@ -6,7 +6,7 @@ import Skills from '../components/Skills'
 
 const LandingPage = () => {
   return (
-    <div className='bg-amber-50/50'>
+    <div className='bg-amber-50'>
         <Navbar />
         <Home />
         <About />

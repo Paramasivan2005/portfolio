@@ -25,3 +25,6 @@
 .cinzel {
   font-family: "Cinzel", sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}

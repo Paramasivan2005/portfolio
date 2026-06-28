@@ -5,7 +5,7 @@ import { IoMdDownload } from "react-icons/io";
 
 const Home = () => {
   return (
-    <div id="home" className="py-10">
+    <div id="home" className="py-10 scroll-mt-24">
       {/* its contain img and one paragraph */}
       <div className="w-32 mx-auto">
         <img

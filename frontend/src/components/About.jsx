@@ -18,7 +18,7 @@ const About = () => {
     },
   ];
   return (
-    <div id="about" className=" md:p-10 w-full max-h-screen flex flex-col md:flex md:flex-row">
+    <div id="about" className="scroll-mt-10 md:p-10 w-full flex flex-col md:flex md:flex-row">
       <div className="flex flex-col gap-10 px-10 md:flex md:flex-row">
         {/* left side and top side */}
         <div className="md:w-[45%] lg:w-[25%] h-fit relative bg-green-300">

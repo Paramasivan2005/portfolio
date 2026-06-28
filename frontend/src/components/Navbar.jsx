@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="sticky top-0 left-0 right-0 z-50 flex justify-around  py-4 my-auto bg-amber-100/30">
+    <div className="sticky top-0 left-0 right-0 z-50 flex justify-around  py-4  bg-amber-100/30">
       {/* Title */}
       <div className="my-auto">
         <a href="#home" className="title font-normal tracking-wider md:text-xl">
