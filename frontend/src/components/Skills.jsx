@@ -34,10 +34,10 @@ const Skills = () => {
     <div id="skills" className="scroll-mt-20">
       <div className="text-center my-10">
         <FaCode className="mx-auto text-indigo-600 text-4xl" />
-        <h1 className="text-4xl cinzel font-bold">
+        <h1 className="text-4xl cinzel font-bold dark:text-white">
           My <span className="text-indigo-600">Skills</span>
         </h1>
-        <p className="inter text-slate-700">
+        <p className="inter text-slate-700 dark:text-gray-300">
           Technologies I use to build modern, responsive and scalable <br /> web
           applications..
         </p>
@@ -47,22 +47,22 @@ const Skills = () => {
       <div>
         {/* frontend section*/}
         <div className="flex flex-col gap-2 items-center my-10">
-          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold">
+          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <RiComputerLine className="text-3xl text-blue-500" /> Frontend
           </h1>
 
-          <div className="w-9/10  border-blue-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <div className="w-9/10 dark:border-blue-400 border-blue-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img src={html} alt="HTML" className="w-20 h-20 object-contain" />
               <p className="py-1  text-sm font-medium">HTML</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img src={css} alt="HTML" className="w-20 h-20 object-contain" />
               <p className="py-1  text-sm font-semibold">CSS</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={tailwind}
                 alt="tailwind"
@@ -71,12 +71,12 @@ const Skills = () => {
               <p className="py-1 text-sm font-semibold">Tailwind CSS</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img src={js} alt="js" className="w-20 h-20 object-contain" />
               <p className="py-1 text-sm font-semibold">Javascript</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={react}
                 alt="react"
@@ -90,12 +90,12 @@ const Skills = () => {
         {/* backend section */}
 
         <div className="flex flex-col gap-2 items-center my-10">
-          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold">
+          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <GiServerRack className="text-3xl text-green-500" /> Backend
           </h1>
 
-          <div className="w-9/10  border-green-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <div className="w-9/10 dark:border-green-400 border-green-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={node}
                 alt="node js"
@@ -104,7 +104,7 @@ const Skills = () => {
               <p className="py-1  text-sm font-medium">Node js</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={express}
                 alt="HTML"
@@ -113,12 +113,12 @@ const Skills = () => {
               <p className="py-1  text-sm font-semibold">Express js</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img src={jwt} alt="jwt" className="w-20 h-20 object-contain" />
               <p className="py-1 text-sm font-semibold">JWT</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={redis}
                 alt="redis"
@@ -127,7 +127,7 @@ const Skills = () => {
               <p className="py-1 text-sm font-semibold">Redis</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={restapi}
                 alt="restapi"
@@ -136,7 +136,7 @@ const Skills = () => {
               <p className="py-1 text-sm font-semibold">Rest API</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={socket}
                 alt="socket io"
@@ -150,13 +150,13 @@ const Skills = () => {
         <div className="flex flex-col lg:flex-row gap-8 w-9/10 mx-auto my-10">
           {/* Database Section */}
           <div className="flex-1 flex flex-col items-center gap-3">
-            <h1 className="flex items-center gap-2 text-2xl poppins font-semibold">
+            <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
               <FaDatabase className="text-3xl text-purple-500" />
               Database
             </h1>
 
-            <div className="w-full border-2 border-purple-500 rounded-xl flex flex-wrap justify-center gap-6 p-8">
-              <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="w-full border-2 dark:border-purple-400 border-purple-500 rounded-xl flex flex-wrap justify-center gap-6 p-8">
+              <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
                 <img
                   src={postgres}
                   alt="postgresql"
@@ -165,7 +165,7 @@ const Skills = () => {
                 <p className="text-sm font-medium">PostgreSQL</p>
               </div>
 
-              <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
+              <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
                 <img
                   src={mysql}
                   alt="mysql"
@@ -178,13 +178,13 @@ const Skills = () => {
 
           {/* Programming Language Section */}
           <div className="lg:w-[320px] flex flex-col items-center gap-3">
-            <h1 className="flex items-center gap-2 text-xl text-center poppins font-semibold">
+            <h1 className="flex items-center gap-2 text-xl text-center poppins font-semibold dark:text-white">
               <FaCode className="text-3xl text-yellow-500" />
               Programming Language
             </h1>
 
-            <div className="w-full border-2 border-yellow-500 rounded-xl flex justify-center p-8">
-              <div className="w-32 h-32 bg-white shadow-2xl hover:shadow-xl hover:drop-shadow-2xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="w-full border-2 dark:border-yellow-400 border-yellow-500 rounded-xl flex justify-center p-8">
+              <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:shadow-xl hover:drop-shadow-2xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
                 <img
                   src={python}
                   alt="python"
@@ -201,13 +201,13 @@ const Skills = () => {
         {/* deployment section */}
 
         <div className="flex flex-col gap-2 items-center my-10">
-          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold">
+          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <AiOutlineDeploymentUnit className="text-3xl text-indigo-500" />{" "}
             Deployment
           </h1>
 
-          <div className="w-9/10  border-indigo-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <div className="w-9/10 dark:border-indigo-400 border-indigo-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={netlify}
                 alt="netlify"
@@ -216,7 +216,7 @@ const Skills = () => {
               <p className="py-1  text-sm font-medium">Netlify</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={vercel}
                 alt="vercel"
@@ -225,7 +225,7 @@ const Skills = () => {
               <p className="py-1  text-sm font-semibold">Vercel</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={render}
                 alt="render"
@@ -234,12 +234,12 @@ const Skills = () => {
               <p className="py-1  text-sm font-semibold">Render</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img src={neon} alt="neon" className="w-20 h-20 object-contain" />
               <p className="py-1 text-sm font-semibold">Neon</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={supabase}
                 alt="supabase"
@@ -253,17 +253,17 @@ const Skills = () => {
         {/* tools section */}
 
         <div className="flex flex-col gap-2 items-center my-10">
-          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold">
+          <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <FaTools className="text-3xl text-pink-400" /> Tools
           </h1>
 
-          <div className="w-9/10  border-pink-400 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <div className="w-9/10 dark:border-pink-300 border-pink-400 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img src={git} alt="git" className="w-20 h-20 object-contain" />
               <p className="py-1  text-sm font-medium">Git</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={github}
                 alt="github"
@@ -272,7 +272,7 @@ const Skills = () => {
               <p className="py-1  text-sm font-medium">GitHub</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={vscode}
                 alt="vscode"
@@ -281,7 +281,7 @@ const Skills = () => {
               <p className="py-1  text-sm font-medium">Vs Code</p>
             </div>
 
-            <div className="w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <div className=" dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
               <img
                 src={postman}
                 alt="postman"

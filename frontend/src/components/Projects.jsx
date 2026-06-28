@@ -73,15 +73,15 @@ const Projects = () => {
       {/* Heading */}
 
       <div className="text-center mb-12">
-        <p className="inline px-5 py-1 rounded-full bg-slate-200 uppercase text-purple-700 text-xl">
+        <p className="dark:bg-gray-800 dark:text-purple-400 inline px-5 py-1 rounded-full bg-slate-200 uppercase text-purple-700 text-xl">
           . My Work .
         </p>
 
-        <h1 className="text-6xl mt-5 bg-linear-to-r from-black via-purple-600 to-purple-900 bg-clip-text text-transparent cinzel">
+        <h1 className="dark:from-white dark:via-purple-600 dark:to-purple-900 text-6xl mt-5 bg-linear-to-r from-black via-purple-600 to-purple-900 bg-clip-text text-transparent cinzel">
           Projects
         </h1>
 
-        <p className="text-slate-600 mt-2">
+        <p className="text-slate-600 mt-2 dark:text-gray-300">
           Here are some of the projects I've worked on.
           <br />
           Each project represents a challenge I solved with code and creativity.
@@ -91,11 +91,11 @@ const Projects = () => {
       {/* Slider */}
 
       <div className="relative w-[90%] mx-auto">
-        <button className="prev-btn absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-4">
+        <button className="dark:bg-gray-800 dark:text-white cursor-pointer prev-btn absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-4">
           <FaArrowLeft />
         </button>
 
-        <button className="next-btn absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-4">
+        <button className="dark:bg-gray-800 dark:text-white cursor-pointer next-btn absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-4">
           <FaArrowRight />
         </button>
 
@@ -127,7 +127,7 @@ const Projects = () => {
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
-              <div className="bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500">
+              <div className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500">
                 {/* Image */}
 
                 <div className="relative group overflow-hidden rounded-lg">
@@ -144,7 +144,7 @@ const Projects = () => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="bg-white p-4 rounded-full hover:scale-110 transition"
+                      className="dark:bg-gray-800 bg-white p-4 rounded-full hover:scale-110 transition"
                     >
                       <FaGithub className="text-4xl text-black" />
                     </a>
@@ -167,11 +167,11 @@ const Projects = () => {
 
                 {/* Card Details */}
 
-                <h2 className="text-center font-bold text-2xl mt-5">
+                <h2 className="text-center font-bold text-2xl mt-5 dark:text-white">
                   {project.title}
                 </h2>
 
-                <p className="text-center mt-3 text-gray-700">{project.desc}</p>
+                <p className="text-center mt-3 text-gray-700 dark:text-gray-300">{project.desc}</p>
 
                 <div className="flex justify-center flex-wrap gap-3 mt-6">
                   {project.tech.map((item, index) => (
@@ -184,7 +184,7 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex justify-center mt-6">
-                  <a href={project.readmore} className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-xl transition duration-300">
+                  <a href={project.readmore} className="dark:bg-blue-600 dark:hover:bg-blue-700 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-xl transition duration-300">
                     Read More..
                   </a>
                 </div>

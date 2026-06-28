@@ -21,9 +21,9 @@ const About = () => {
     <div id="about" className="scroll-mt-10 md:p-10 w-full flex flex-col md:flex md:flex-row">
       <div className="flex flex-col gap-10 px-10 md:flex md:flex-row">
         {/* left side and top side */}
-        <div className="md:w-[45%] lg:w-[25%] h-fit relative shadow-2xl">
+        <div className="md:w-[45%] lg:w-[25%] h-fit relative shadow-2xl dark:shadow-gray-800">
           <img src={profile} alt="profile" className="shadow-lg rounded-lg" />
-          <div className="backdrop-blur-xl rounded-lg px-1 md:px-5 py-3 flex flex-col absolute -bottom-8 left-5 md:left-0 lg:left-3">
+          <div className="backdrop-blur-xl rounded-lg px-3 md:px-5 py-3 flex flex-col absolute -bottom-8 left-5 md:left-0 lg:left-3">
             <p className="text-white font-bold md:text-sm text-xs">
               Final year CSE Student
             </p>
@@ -39,10 +39,10 @@ const About = () => {
             <CiUser className="text-normal font-bold text-purple-600 my-auto" />
             About me
           </h1>
-          <h1 className="poppins font-semibold text-3xl md:text-4xl py-2">
+          <h1 className="poppins font-semibold text-3xl md:text-4xl py-2 dark:text-white">
             Get to know me
           </h1>
-          <p className="inter text-slate-800">
+          <p className="inter text-slate-800 dark:text-gray-300">
             I’m a final-year Computer Science and Engineering student passionate
             about building clean, responsive web applications and solving
             real-world problems through code. I’ve solved 15+ LeetCode problems
@@ -74,11 +74,11 @@ const About = () => {
           </div>
 
           {/* Timeline Wrapper */}
-          <div className="relative border-l border-slate-200 ml-20 md:ml-32  pl-10 md:pl-12 space-y-12">
+          <div className="relative border-l border-slate-200 dark:border-gray-700 ml-20 md:ml-32  pl-10 md:pl-12 space-y-12">
             {educationData.map((item, index) => (
               <div key={index} className="relative group">
                 {/* Timeline Dot */}
-                <div className="absolute -left-13.25 top-1.5 bg-indigo-600 rounded-full w-3 h-3 border-4 border-white ring-4 ring-indigo-100 transition-all group-hover:scale-110" />
+                <div className="dark:border-gray-900 dark:ring-indigo-900 absolute -left-13.25 top-1.5 bg-indigo-600 rounded-full w-3 h-3 border-4 border-white ring-4 ring-indigo-100 transition-all group-hover:scale-110" />
 
                 {/* Year Label (Positioned absolutely to the left of the timeline line) */}
                 <div className="absolute -left-44 top-0.5 w-28 text-right text-indigo-400 font-semibold text-sm">
@@ -87,13 +87,13 @@ const About = () => {
 
                 {/* Content Card */}
                 <div className="space-y-1.5">
-                  <h3 className="text-lg font-bold text-slate-800 transition-colors group-hover:text-indigo-600">
+                  <h3 className="dark:text-white text-lg font-bold text-slate-800 transition-colors group-hover:text-indigo-600">
                     {item.degree}
                   </h3>
                   <p className="text-sm font-medium text-indigo-500">
                     {item.institution}
                   </p>
-                  <p className="text-sm text-slate-500 font-medium">
+                  <p className="dark:text-gray-400 text-sm text-slate-500 font-medium">
                     {item.score}
                   </p>
                 </div>
