@@ -1,0 +1,25 @@
+import pg from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const { Pool } = pg;
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
+
+// Test Database Connection
+pool.query("SELECT NOW()")
+  .then((res) => {
+    console.log("✅ Database Connected");
+    console.log(res.rows[0]);
+  })
+  .catch((err) => {
+    console.error("❌ Database Error:", err.message);
+  });
+
+export default pool;
