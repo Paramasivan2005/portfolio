@@ -9,7 +9,7 @@ import contactRoutes from "./routes/contactRoute.js"
 dotenv.config()
 
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 app.use(cors({
     origin: process.env.CLIENT_URL,
