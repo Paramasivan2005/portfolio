@@ -1,5 +1,13 @@
 import React from "react";
-import ss from "../assets/ss.png";
+import urlimg from "../assets/url-ss.png"
+import smartcampus from "../assets/campus-ss.png"
+import portfolio from "../assets/portfolio-img.png"
+import expense from "../assets/expense-ss.png"
+import qr from "../assets/qr-ss.png"
+import smarttask from "../assets/task-ss.png"
+import indore from "../assets/indore-ss.png"
+
+
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -16,41 +24,71 @@ const projects = [
   {
     id: 1,
     title: "URL Shortner",
-    img: ss,
-    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-    tech: ["HTML", "CSS", "JavaScript"],
-    github: "https://github.com/yourname/url-shortner",
+    img: urlimg,
+    desc: "A URL shortening platform for creating and managing short, easy-to-share links.",
+    tech: ["Frontend", "Backend"],
+    github: "https://github.com/Paramasivan2005/url-shortner.git",
     live: "https://your-url-shortner.vercel.app",
     readmore: "https://dashboard.vercel.app",
   },
   {
     id: 2,
-    title: "Weather App",
-    img: ss,
-    desc: "Weather app using OpenWeather API.",
-    tech: ["React", "Tailwind", "API"],
-    github: "https://github.com/yourname/weather",
+    title: "Smart Campus Resource Management System",
+    img: smartcampus,
+    desc: "A web application that streamlines campus resource allocation and management.",
+    tech: ["Frontend", "Backend"],
+    github: "https://github.com/Paramasivan2005/smart-campus-management.git",
     live: "https://weather.vercel.app",
     readmore: "https://dashboard.vercel.app",
   },
   {
     id: 3,
     title: "Portfolio",
-    img: ss,
+    img: portfolio,
     desc: "My personal portfolio website.",
-    tech: ["React", "Tailwind", "Framer Motion"],
-    github: "https://github.com/yourname/portfolio",
-    live: "https://portfolio.vercel.app",
+    tech: ["React", "Tailwind", "Express", "API"],
+    github: "https://github.com/Paramasivan2005/portfolio.git",
+    live: "https://paramasivan-portfolio-pi.vercel.app/",
     readmore: "https://dashboard.vercel.app",
   },
   {
     id: 4,
-    title: "Admin Dashboard",
-    img: ss,
-    desc: "Dashboard with charts and analytics.",
-    tech: ["React", "Node.js", "MongoDB"],
-    github: "https://github.com/yourname/dashboard",
-    live: "https://dashboard.vercel.app",
+    title: "Smart Task Manager",
+    img: smarttask,
+    desc: "A smart task manager that helps users create, organize, and track tasks efficiently.",
+    tech: ["HTML", "JavaScript", "Tailwind"],
+    github: "https://github.com/Paramasivan2005/smart-task-manager.git",
+    live: "https://smart-task-manager-psi-seven.vercel.app/",
+    readmore: "https://dashboard.vercel.app",
+  },
+  {
+    id: 5,
+    title: "QR Code Generator",
+    img: qr,
+    desc: "A fast and user-friendly tool for generating QR codes from text and URLs.",
+    tech: ["React", "Tailwind"],
+    github: "https://github.com/Paramasivan2005/QrCode-generator.git",
+    live: "https://qr-code-generator-ashy-delta.vercel.app/",
+    readmore: "https://dashboard.vercel.app",
+  },
+  {
+    id: 6,
+    title: "Income Expense Tracker",
+    img: expense,
+    desc: "A personal finance application to track income, expenses, and spending habits.",
+    tech: ["HTML", "Tailwind", "Javascript"],
+    github: "https://github.com/Paramasivan2005/income-expense-tracker.git",
+    live: "https://income-expense-tracker-bvoxbqmc2-paramasivans-projects.vercel.app/",
+    readmore: "https://dashboard.vercel.app",
+  },
+  {
+    id: 7,
+    title: "Indore Plants",
+    img: indore,
+    desc: "A modern web landing page for discovering and exploring beautiful indoor plants",
+    tech: ["HTML", "Tailwind", "Javascript"],
+    github: "https://github.com/Paramasivan2005/indore-plants.git",
+    // live: "https://qr-code-generator-ashy-delta.vercel.app/",
     readmore: "https://dashboard.vercel.app",
   },
 ];
@@ -65,6 +103,9 @@ const techColors = {
   "Node.js": "bg-green-600",
   MongoDB: "bg-green-700",
   "Framer Motion": "bg-pink-600",
+  Frontend: "bg-green-500",
+  Backend: "bg-yellow-500",
+  Express: "bg-blue-500",
 };
 
 const Projects = () => {
