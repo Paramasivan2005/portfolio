@@ -1,8 +1,9 @@
 import { validationResult } from "express-validator";
 import pool from "../database/db.js";
-import transporter from "../utils/mailer.js";
+import { resend } from "../utils/mailer.js";
 
 export const sendMessage = async (req, res) => {
+
     try {
         const errors = validationResult(req);
 
@@ -15,63 +16,52 @@ export const sendMessage = async (req, res) => {
 
         const { name, email, message } = req.body;
 
+        // Save to DB
         const query = `
-            INSERT INTO contact_messages(name, email, message)
-            VALUES($1, $2, $3)
-            RETURNING *;
-        `;
+      INSERT INTO contact_messages(name, email, message)
+      VALUES($1, $2, $3)
+      RETURNING *;
+    `;
 
         const values = [name, email, message];
-
         const result = await pool.query(query, values);
 
         // ==========================
         // Mail to YOU
         // ==========================
-        await transporter.sendMail({
-            from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+        await resend.emails.send({
+            from: "Portfolio <onboarding@resend.dev>",
             to: process.env.EMAIL_USER,
+            replyTo: email,
             subject: `📩 New Portfolio Message from ${name}`,
             html: `
-                <h2>New Contact Form Submission</h2>
+        <h2>New Contact Form Submission</h2>
 
-                <p><strong>Name:</strong> ${name}</p>
-                <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
 
-                <h3>Message</h3>
-                <p>${message}</p>
-            `,
+        <h3>Message</h3>
+        <p>${message}</p>
+      `,
         });
 
         // ==========================
         // Auto Reply
         // ==========================
-        await transporter.sendMail({
-            from: `"Paramasivan" <${process.env.EMAIL_USER}>`,
+        const autoReply = await resend.emails.send({
+            from: "Paramasivan <onboarding@resend.dev>",
             to: email,
             subject: "Thanks for contacting me!",
-            html: `
-                <h2>Hello ${name}, 👋</h2>
-
-                <p>Your message has been received successfully.</p>
-
-                <p>This is an automated email to confirm your submission.</p>
-
-                <p>If necessary, I'll contact you regarding your message.</p>
-
-                <br>
-
-                <p>Regards,</p>
-                <h3>Paramasivan</h3>
-            `,
+            html: "...",
         });
+
+        console.log("Auto Reply:", autoReply);
 
         res.status(201).json({
             success: true,
             message: "Message sent successfully.",
             data: result.rows[0],
         });
-
     } catch (error) {
         console.error(error);
 
