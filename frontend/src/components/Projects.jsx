@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import urlimg from "../assets/url-ss.png"
 import smartcampus from "../assets/campus-ss.png"
 import portfolio from "../assets/portfolio-img.png"
@@ -113,7 +114,13 @@ const Projects = () => {
     <div id="projects" className="my-16 scroll-mt-24">
       {/* Heading */}
 
-      <div className="text-center mb-12">
+      <motion.div
+  className="text-center mb-12"
+  initial={{ opacity: 0, y: -40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.7 }}
+>
         <p className="dark:bg-gray-800 dark:text-purple-400 inline px-5 py-1 rounded-full bg-slate-200 uppercase text-purple-700 text-xl">
           . My Work .
         </p>
@@ -127,11 +134,17 @@ const Projects = () => {
           <br />
           Each project represents a challenge I solved with code and creativity.
         </p>
-      </div>
+      </motion.div>
 
       {/* Slider */}
 
-      <div className="relative w-[90%] mx-auto">
+      <motion.div
+  className="relative w-[90%] mx-auto"
+  initial={{ opacity: 0, y: 60 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.8 }}
+>
         <button className="dark:bg-gray-800 dark:text-white cursor-pointer prev-btn absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-4">
           <FaArrowLeft />
         </button>
@@ -168,7 +181,20 @@ const Projects = () => {
         >
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
-              <div className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500">
+              <motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  whileHover={{
+    y: -10,
+    transition: {
+      type: "spring",
+      stiffness: 250,
+    },
+  }}
+  className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500"
+>
                 {/* Image */}
 
                 <div className="relative group overflow-hidden rounded-lg">
@@ -229,11 +255,11 @@ const Projects = () => {
                     Read More..
                   </a>
                 </div>
-              </div>
+              </motion.div>
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </div>
   );
 };

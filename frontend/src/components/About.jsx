@@ -1,8 +1,51 @@
 import React from "react";
 import profile from "../assets/profile.jpeg";
 import { CiUser } from "react-icons/ci";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const fadeLeft = {
+    hidden: {
+      opacity: 0,
+      x: -60,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+      },
+    },
+  };
+
+  const fadeRight = {
+    hidden: {
+      opacity: 0,
+      x: 60,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.7,
+      },
+    },
+  };
+
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+      },
+    },
+  };
+
   const educationData = [
     {
       year: "2023 - 2027",
@@ -18,10 +61,20 @@ const About = () => {
     },
   ];
   return (
-    <div id="about" className="scroll-mt-10 md:p-10 w-full flex flex-col md:flex md:flex-row">
+    <div
+      id="about"
+      className="scroll-mt-10 md:p-10 w-full flex flex-col md:flex md:flex-row"
+    >
       <div className="flex flex-col gap-10 px-10 md:flex md:flex-row">
         {/* left side and top side */}
-        <div className="md:w-[45%] lg:w-[25%] h-fit relative shadow-2xl dark:shadow-gray-800">
+
+        <motion.div
+          className="md:w-[45%] lg:w-[25%] h-fit relative shadow-2xl dark:shadow-gray-800"
+          variants={fadeLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
           <img src={profile} alt="profile" className="shadow-lg rounded-lg" />
           <div className="backdrop-blur-xl rounded-lg px-3 md:px-5 py-3 flex flex-col absolute -bottom-8 left-5 md:left-0 lg:left-3">
             <p className="text-white font-bold md:text-sm text-xs">
@@ -31,18 +84,44 @@ const About = () => {
               open to internship opportunities
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* right side */}
-        <div className="md:w-[75%] py-5">
-          <h1 className="flex gap-2 items-center poppins font-medium uppercase text-purple-600">
+        <motion.div
+          className="md:w-[75%] py-5"
+          variants={fadeRight}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="flex gap-2 items-center poppins font-medium uppercase text-purple-600"
+          >
             <CiUser className="text-normal font-bold text-purple-600 my-auto" />
             About me
-          </h1>
-          <h1 className="poppins font-semibold text-3xl md:text-4xl py-2 dark:text-white">
+          </motion.h1>
+          <motion.h1
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="poppins font-semibold text-3xl md:text-4xl py-2 dark:text-white"
+          >
             Get to know me
-          </h1>
-          <p className="inter text-slate-800 dark:text-gray-300">
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="inter text-slate-800 dark:text-gray-300"
+          >
             I’m a final-year Computer Science and Engineering student passionate
             about building clean, responsive web applications and solving
             real-world problems through code. I’ve solved 15+ LeetCode problems
@@ -51,7 +130,7 @@ const About = () => {
             backend development. I enjoy turning ideas into practical projects
             and I’m actively looking for opportunities to grow as a developer
             and contribute to real-world applications.
-          </p>
+          </motion.p>
           <div className="pt-5 flex items-center gap-3 mb-8 text-indigo-600">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +155,17 @@ const About = () => {
           {/* Timeline Wrapper */}
           <div className="relative border-l border-slate-200 dark:border-gray-700 ml-20 md:ml-32  pl-10 md:pl-12 space-y-12">
             {educationData.map((item, index) => (
-              <div key={index} className="relative group">
+              <motion.div
+                key={index}
+                className="relative group"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.2,
+                }}
+              >
                 {/* Timeline Dot */}
                 <div className="dark:border-gray-900 dark:ring-indigo-900 absolute -left-13.25 top-1.5 bg-indigo-600 rounded-full w-3 h-3 border-4 border-white ring-4 ring-indigo-100 transition-all group-hover:scale-110" />
 
@@ -97,11 +186,10 @@ const About = () => {
                     {item.score}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-       
+        </motion.div>
       </div>
     </div>
   );

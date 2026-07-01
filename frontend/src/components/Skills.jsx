@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { FaCode } from "react-icons/fa";
 import { RiComputerLine } from "react-icons/ri";
 import { GiServerRack } from "react-icons/gi";
@@ -30,9 +31,37 @@ import render from "../assets/render.png";
 import postman from "../assets/postman.webp";
 
 const Skills = () => {
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <div id="skills" className="scroll-mt-20">
-      <div className="text-center my-10">
+      <motion.div
+        className="text-center my-10"
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <FaCode className="mx-auto text-indigo-600 text-4xl" />
         <h1 className="text-4xl cinzel font-bold dark:text-white">
           My <span className="text-indigo-600">Skills</span>
@@ -42,149 +71,253 @@ const Skills = () => {
           applications..
         </p>
         <hr className="w-20 mx-auto mt-3 text-indigo-700" />
-      </div>
+      </motion.div>
 
       <div>
         {/* frontend section*/}
-        <div className="flex flex-col gap-2 items-center my-10">
+        <motion.div
+          className="flex flex-col gap-2 items-center my-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <RiComputerLine className="text-3xl text-blue-500" /> Frontend
           </h1>
 
-          <div className="w-9/10 dark:border-blue-400 border-blue-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <motion.div
+            className="w-9/10 dark:border-blue-400 border-blue-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img src={html} alt="HTML" className="w-20 h-20 object-contain" />
               <p className="py-1  text-sm font-medium">HTML</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img src={css} alt="HTML" className="w-20 h-20 object-contain" />
               <p className="py-1  text-sm font-semibold">CSS</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={tailwind}
                 alt="tailwind"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1 text-sm font-semibold">Tailwind CSS</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img src={js} alt="js" className="w-20 h-20 object-contain" />
               <p className="py-1 text-sm font-semibold">Javascript</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={react}
                 alt="react"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1 text-sm font-semibold">React</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* backend section */}
 
-        <div className="flex flex-col gap-2 items-center my-10">
+        <motion.div
+          className="flex flex-col gap-2 items-center my-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <GiServerRack className="text-3xl text-green-500" /> Backend
           </h1>
 
-          <div className="w-9/10 dark:border-green-400 border-green-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <motion.div
+            className="w-9/10 dark:border-green-400 border-green-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={node}
                 alt="node js"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-medium">Node js</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={express}
                 alt="HTML"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-semibold">Express js</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img src={jwt} alt="jwt" className="w-20 h-20 object-contain" />
               <p className="py-1 text-sm font-semibold">JWT</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={redis}
                 alt="redis"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1 text-sm font-semibold">Redis</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={restapi}
                 alt="restapi"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1 text-sm font-semibold">Rest API</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={socket}
                 alt="socket io"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1 text-sm font-semibold">Socket io</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
         {/* combined div */}
         <div className="flex flex-col lg:flex-row gap-8 w-9/10 mx-auto my-10">
           {/* Database Section */}
-          <div className="flex-1 flex flex-col items-center gap-3">
+          <motion.div
+            className="flex-1 flex flex-col items-center gap-3"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
             <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
               <FaDatabase className="text-3xl text-purple-500" />
               Database
             </h1>
 
-            <div className="w-full border-2 dark:border-purple-400 border-purple-500 rounded-xl flex flex-wrap justify-center gap-6 p-8">
-              <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              className="w-full border-2 dark:border-purple-400 border-purple-500 rounded-xl flex flex-wrap justify-center gap-6 p-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between"
+              >
                 <img
                   src={postgres}
                   alt="postgresql"
                   className="w-20 h-20 object-contain"
                 />
                 <p className="text-sm font-medium">PostgreSQL</p>
-              </div>
+              </motion.div>
 
-              <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:shadow-xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between"
+              >
                 <img
                   src={mysql}
                   alt="mysql"
                   className="w-20 h-20 object-contain"
                 />
                 <p className="text-sm font-medium">MySQL</p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
 
           {/* Programming Language Section */}
-          <div className="lg:w-[320px] flex flex-col items-center gap-3">
+          <motion.div
+            className="lg:w-[320px] flex flex-col items-center gap-3"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7 }}
+          >
             <h1 className="flex items-center gap-2 text-xl text-center poppins font-semibold dark:text-white">
               <FaCode className="text-3xl text-yellow-500" />
               Programming Language
             </h1>
 
-            <div className="w-full border-2 dark:border-yellow-400 border-yellow-500 rounded-xl flex justify-center p-8">
-              <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:shadow-xl hover:drop-shadow-2xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              className="w-full border-2 dark:border-yellow-400 border-yellow-500 rounded-xl flex justify-center p-8"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <motion.div
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:shadow-xl hover:drop-shadow-2xl hover:scale-105 duration-300 rounded-2xl p-4 flex flex-col items-center justify-between"
+              >
                 <img
                   src={python}
                   alt="python"
@@ -193,104 +326,164 @@ const Skills = () => {
                 <p className="text-sm font-medium text-center">
                   Python(Basics)
                 </p>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* deployment section */}
 
-        <div className="flex flex-col gap-2 items-center my-10">
+        <motion.div
+          className="flex flex-col gap-2 items-center my-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <AiOutlineDeploymentUnit className="text-3xl text-indigo-500" />{" "}
             Deployment
           </h1>
 
-          <div className="w-9/10 dark:border-indigo-400 border-indigo-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <motion.div
+            className="w-9/10 dark:border-indigo-400 border-indigo-500 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={netlify}
                 alt="netlify"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-medium">Netlify</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={vercel}
                 alt="vercel"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-semibold">Vercel</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={render}
                 alt="render"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-semibold">Render</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img src={neon} alt="neon" className="w-20 h-20 object-contain" />
               <p className="py-1 text-sm font-semibold">Neon</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={supabase}
                 alt="supabase"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1 text-sm font-semibold">Supabase</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
 
         {/* tools section */}
 
-        <div className="flex flex-col gap-2 items-center my-10">
+        <motion.div
+          className="flex flex-col gap-2 items-center my-10"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7 }}
+        >
           <h1 className="flex items-center gap-2 text-2xl poppins font-semibold dark:text-white">
             <FaTools className="text-3xl text-pink-400" /> Tools
           </h1>
 
-          <div className="w-9/10 dark:border-pink-300 border-pink-400 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around">
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+          <motion.div
+            className="w-9/10 dark:border-pink-300 border-pink-400 border-2 rounded-xl flex flex-wrap gap-4 px-5 py-10 justify-around"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img src={git} alt="git" className="w-20 h-20 object-contain" />
               <p className="py-1  text-sm font-medium">Git</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={github}
                 alt="github"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-medium">GitHub</p>
-            </div>
+            </motion.div>
 
-            <div className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={vscode}
                 alt="vscode"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-medium">Vs Code</p>
-            </div>
+            </motion.div>
 
-            <div className=" dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between">
+            <motion.div
+              variants={itemVariants}
+              whileHover={{ scale: 1.05, y: -5 }}
+              className=" dark:bg-gray-800 dark:text-white dark:shadow-gray-700 w-32 h-32 bg-white shadow-2xl hover:drop-shadow-2xl hover:scale-105 duration-300  rounded-2xl p-4 flex flex-col items-center justify-between"
+            >
               <img
                 src={postman}
                 alt="postman"
                 className="w-20 h-20 object-contain"
               />
               <p className="py-1  text-sm font-medium">Postman</p>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

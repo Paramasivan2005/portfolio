@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -62,7 +63,13 @@ const Contact = () => {
   return (
     <div id="contact" className="scroll-mt-14">
       <section className="max-w-5xl mx-auto py-10 px-6">
-        <div className="text-center mb-14">
+        <motion.div
+          className="text-center mb-14"
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <p className="dark:bg-gray-800 dark:text-purple-400 inline-block px-5 py-1 rounded-full bg-slate-100 text-purple-700 uppercase">
             . Contact .
           </p>
@@ -75,11 +82,23 @@ const Contact = () => {
             I'm always open to new opportunities, collaborations, and meaningful
             conversations. Let's connect.
           </p>
-        </div>
+        </motion.div>
 
-        <form onSubmit={handleSubmit} className="space-y-8">
+        <motion.form
+          onSubmit={handleSubmit}
+          className="space-y-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="grid md:grid-cols-2 gap-8">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+            >
               <label className="text-sm font-medium dark:text-white">
                 Full Name
               </label>
@@ -96,9 +115,14 @@ const Contact = () => {
               {errors.name && (
                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
               )}
-            </div>
+            </motion.div>
 
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
               <label className="text-sm font-medium dark:text-white">
                 Email
               </label>
@@ -115,10 +139,15 @@ const Contact = () => {
               {errors.email && (
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
               )}
-            </div>
+            </motion.div>
           </div>
 
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
             <label className="text-sm font-medium dark:text-white">
               Message
             </label>
@@ -135,16 +164,26 @@ const Contact = () => {
             {errors.message && (
               <p className="text-red-500 text-sm mt-1">{errors.message}</p>
             )}
-          </div>
+          </motion.div>
 
-          <button
+          <motion.button
             type="submit"
             disabled={loading}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+            whileHover={{
+              scale: 1.05,
+            }}
+            whileTap={{
+              scale: 0.95,
+            }}
             className="border-2 cursor-pointer border-purple-600 text-purple-600 px-10 py-3 rounded-full hover:bg-purple-600 hover:text-white transition duration-300 disabled:opacity-50"
           >
             {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
+          </motion.button>
+        </motion.form>
       </section>
     </div>
   );
