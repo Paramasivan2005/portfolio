@@ -1,14 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import urlimg from "../assets/url-ss.png"
-import smartcampus from "../assets/campus-ss.png"
-import portfolio from "../assets/portfolio-img.png"
-import expense from "../assets/expense-ss.png"
-import qr from "../assets/qr-ss.png"
-import smarttask from "../assets/task-ss.png"
-import indore from "../assets/indore-ss.png"
-
-
+import { Link } from "react-router-dom";
+import urlimg from "../assets/url-ss.png";
+import smartcampus from "../assets/campus-ss.png";
+import portfolio from "../assets/portfolio-img.png";
+import expense from "../assets/expense-ss.png";
+import qr from "../assets/qr-ss.png";
+import smarttask from "../assets/task-ss.png";
+import indore from "../assets/indore-ss.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -20,6 +19,9 @@ import "swiper/css/pagination";
 import { FaArrowLeft, FaArrowRight, FaGithub } from "react-icons/fa";
 
 import { FiExternalLink } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
+import { useLoading } from "../context/LoadingContext";
+import { useEffect } from "react";
 
 const projects = [
   {
@@ -30,17 +32,17 @@ const projects = [
     tech: ["Frontend", "Backend"],
     github: "https://github.com/Paramasivan2005/url-shortner.git",
     live: "https://your-url-shortner.vercel.app",
-    readmore: "https://dashboard.vercel.app",
+    slug: "urlshortner",
   },
   {
     id: 2,
     title: "Smart Campus Resource Management System",
     img: smartcampus,
-    desc: "A web application that streamlines campus resource allocation and management.",
+    desc: "seat allocation and management system.",
     tech: ["Frontend", "Backend"],
     github: "https://github.com/Paramasivan2005/smart-campus-management.git",
     live: "https://weather.vercel.app",
-    readmore: "https://dashboard.vercel.app",
+    slug: "smart-campus",
   },
   {
     id: 3,
@@ -50,7 +52,7 @@ const projects = [
     tech: ["React", "Tailwind", "Express", "API"],
     github: "https://github.com/Paramasivan2005/portfolio.git",
     live: "https://paramasivan-portfolio-pi.vercel.app/",
-    readmore: "https://dashboard.vercel.app",
+    slug: "portfolio",
   },
   {
     id: 4,
@@ -60,7 +62,7 @@ const projects = [
     tech: ["HTML", "JavaScript", "Tailwind"],
     github: "https://github.com/Paramasivan2005/smart-task-manager.git",
     live: "https://smart-task-manager-psi-seven.vercel.app/",
-    readmore: "https://dashboard.vercel.app",
+    slug: "smart-task-manager",
   },
   {
     id: 5,
@@ -70,7 +72,7 @@ const projects = [
     tech: ["React", "Tailwind"],
     github: "https://github.com/Paramasivan2005/QrCode-generator.git",
     live: "https://qr-code-generator-ashy-delta.vercel.app/",
-    readmore: "https://dashboard.vercel.app",
+    slug: "qr-code-generator",
   },
   {
     id: 6,
@@ -80,7 +82,7 @@ const projects = [
     tech: ["HTML", "Tailwind", "Javascript"],
     github: "https://github.com/Paramasivan2005/income-expense-tracker.git",
     live: "https://income-expense-tracker-bvoxbqmc2-paramasivans-projects.vercel.app/",
-    readmore: "https://dashboard.vercel.app",
+    slug: "income-expense-tracker",
   },
   {
     id: 7,
@@ -90,7 +92,7 @@ const projects = [
     tech: ["HTML", "Tailwind", "Javascript"],
     github: "https://github.com/Paramasivan2005/indore-plants.git",
     // live: "https://qr-code-generator-ashy-delta.vercel.app/",
-    readmore: "https://dashboard.vercel.app",
+    slug: "indore-plants",
   },
 ];
 
@@ -110,17 +112,27 @@ const techColors = {
 };
 
 const Projects = () => {
+  const navigate = useNavigate();
+  const loading = useLoading();
+
+  const openProject = (path) => {
+    loading.current.continuousStart();
+    navigate(path);
+  };
+  useEffect(() => {
+      loading.current.complete();
+    }, []);
   return (
     <div id="projects" className="my-16 scroll-mt-24">
       {/* Heading */}
 
       <motion.div
-  className="text-center mb-12"
-  initial={{ opacity: 0, y: -40 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.7 }}
->
+        className="text-center mb-12"
+        initial={{ opacity: 0, y: -40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <p className="dark:bg-gray-800 dark:text-purple-400 inline px-5 py-1 rounded-full bg-slate-200 uppercase text-purple-700 text-xl">
           . My Work .
         </p>
@@ -139,12 +151,12 @@ const Projects = () => {
       {/* Slider */}
 
       <motion.div
-  className="relative w-[90%] mx-auto"
-  initial={{ opacity: 0, y: 60 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
-  transition={{ duration: 0.8 }}
->
+        className="relative w-[90%] mx-auto"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.8 }}
+      >
         <button className="dark:bg-gray-800 dark:text-white cursor-pointer prev-btn absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white shadow-xl rounded-full p-4">
           <FaArrowLeft />
         </button>
@@ -182,19 +194,19 @@ const Projects = () => {
           {projects.map((project) => (
             <SwiperSlide key={project.id}>
               <motion.div
-  initial={{ opacity: 0, scale: 0.9 }}
-  whileInView={{ opacity: 1, scale: 1 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  whileHover={{
-    y: -10,
-    transition: {
-      type: "spring",
-      stiffness: 250,
-    },
-  }}
-  className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500"
->
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                whileHover={{
+                  y: -10,
+                  transition: {
+                    type: "spring",
+                    stiffness: 250,
+                  },
+                }}
+                className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500"
+              >
                 {/* Image */}
 
                 <div className="relative group overflow-hidden rounded-lg">
@@ -238,7 +250,9 @@ const Projects = () => {
                   {project.title}
                 </h2>
 
-                <p className="text-center mt-3 text-gray-700 dark:text-gray-300">{project.desc}</p>
+                <p className="text-center mt-3 text-gray-700 dark:text-gray-300">
+                  {project.desc}
+                </p>
 
                 <div className="flex justify-center flex-wrap gap-3 mt-6">
                   {project.tech.map((item, index) => (
@@ -251,9 +265,12 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex justify-center mt-6">
-                  <a href={project.readmore} className="dark:bg-blue-600 dark:hover:bg-blue-700 bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-xl transition duration-300">
+                  <button
+                    onClick={() => openProject(`/${project.slug}`)}
+                    className="dark:bg-blue-600 dark:hover:bg-blue-700 bg-blue-500 hover:bg-blue-600 text-white cursor-pointer font-semibold px-6 py-2 rounded-xl transition duration-300"
+                  >
                     Read More..
-                  </a>
+                  </button>
                 </div>
               </motion.div>
             </SwiperSlide>
