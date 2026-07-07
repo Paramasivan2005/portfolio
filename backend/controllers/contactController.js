@@ -49,10 +49,60 @@ export const sendMessage = async (req, res) => {
         // Auto Reply
         // ==========================
         const autoReply = await resend.emails.send({
-            from: "Paramasivan <onboarding@resend.dev>",
+            from: "Paramasivan <onboarding@paramasivan.online>",
             to: email,
             subject: "Thanks for contacting me!",
-            html: "...",
+            html: `
+    <div style="max-width:600px;margin:0 auto;font-family:Arial,Helvetica,sans-serif;background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
+      
+      <div style="background:#111827;padding:20px;text-align:center;">
+        <h1 style="color:#ffffff;margin:0;">Thank You!</h1>
+      </div>
+
+      <div style="padding:30px;color:#374151;line-height:1.7;">
+        <h2 style="margin-top:0;">Hi,</h2>
+
+        <p>
+          Thank you for reaching out through my portfolio website.
+          I have successfully received your message.
+        </p>
+
+        <p>
+          This is an automated confirmation email to let you know that your
+          message has been received. I'll review it as soon as possible and
+          get back to you shortly.
+        </p>
+
+        <p>
+          I appreciate your interest and look forward to connecting with you.
+        </p>
+
+        <div style="margin:30px 0;padding:18px;background:#f9fafb;border-left:4px solid #2563eb;">
+          <strong>What happens next?</strong>
+          <ul style="padding-left:20px;margin:10px 0;">
+            <li>Your message has been successfully received.</li>
+            <li>I'll review your inquiry.</li>
+            <li>You can expect a personal response as soon as possible.</li>
+          </ul>
+        </div>
+
+        <p>
+          Thank you once again for your time.
+        </p>
+
+        <p style="margin-top:30px;">
+          Best regards,<br>
+          <strong>Paramasivan A</strong><br>
+          Full Stack Developer
+        </p>
+      </div>
+
+      <div style="background:#f3f4f6;padding:15px;text-align:center;font-size:13px;color:#6b7280;">
+        This is an automated email. Please do not reply to this message.
+      </div>
+
+    </div>
+  `,
         });
 
         console.log("Auto Reply:", autoReply);
