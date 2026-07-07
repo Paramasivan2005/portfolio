@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectNavbar from "../components/ProjectNavbar";
 import { Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
+import ProjectFooter from "../components/ProjectFooter";
 import { motion } from "framer-motion";
 
 const ProjectLayout = () => {
@@ -14,7 +14,7 @@ const ProjectLayout = () => {
     >
       <ProjectNavbar />
       <Outlet />
-      <Footer />
+      <ProjectFooter />
     </motion.div>
   );
 };

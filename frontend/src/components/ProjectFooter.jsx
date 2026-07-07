@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <motion.footer
       id="footer"
-      className=" border-t border-gray-300 bg-amber-50 dark:bg-gray-900"
+      className="pt-10 border-t border-slate-200 bg-white dark:bg-slate-950 dark:border-slate-800 transition-colors duration-300"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -18,11 +18,11 @@ const Footer = () => {
           {/* Left */}
 
           <div>
-            <h2 className="text-3xl font-bold cinzel bg-linear-to-r dark:from-white from-black to-purple-700 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold cinzel bg-linear-to-r from-black to-purple-700 dark:from-white dark:to-purple-400 bg-clip-text text-transparent">
               Paramasivan A
             </h2>
 
-            <p className="text-gray-500 mt-3 max-w-md dark:text-gray-300">
+            <p className="mt-3 max-w-md text-slate-600 dark:text-slate-400 leading-7">
               Passionate Full Stack Developer building scalable, responsive, and
               user-centric web applications with clean code, modern
               technologies, and intuitive user experiences.
