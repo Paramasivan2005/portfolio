@@ -20,7 +20,7 @@ import {
   FaRocket,
   FaCode,
 } from "react-icons/fa";
-import { useLoading } from "../context/LoadingContext"
+import { useLoading } from "../context/LoadingContext";
 import { useEffect } from "react";
 
 import {
@@ -125,10 +125,10 @@ const SmartCampusProject = () => {
   ];
 
   const loading = useLoading();
-    
-      useEffect(() => {
-        loading.current.complete();
-      }, []);
+
+  useEffect(() => {
+    loading.current.complete();
+  }, []);
 
   return (
     <div className="min-h-screen bg-amber-50 dark:bg-slate-950 text-white">
@@ -140,7 +140,6 @@ const SmartCampusProject = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/20 blur-[150px] rounded-full"></div>
 
         <div className="max-w-7xl mx-auto px-6 py-24">
-
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* LEFT */}
 
@@ -189,7 +188,7 @@ const SmartCampusProject = () => {
 
               {/* Stats */}
 
-              <div className="grid grid-cols-3 gap-5 mt-12">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
                 <div className="bg-white dark:bg-white/5 backdrop-blur-lg border border-slate-200 dark:border-white/10 rounded-2xl p-5 shadow-sm dark:shadow-none transition">
                   <FaUsers className="text-3xl text-cyan-500 mb-3" />
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -216,7 +215,7 @@ const SmartCampusProject = () => {
                     Full Stack
                   </h3>
                   <p className="text-slate-600 dark:text-slate-400 text-sm">
-                    MERN Project
+                    PERN Project
                   </p>
                 </div>
               </div>
@@ -289,7 +288,7 @@ const SmartCampusProject = () => {
         </div>
       </section>
 
-      <section className="py-10 bg-slate-50 dark:bg-slate-950">
+      <section className="py-10 bg-amber-50 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading */}
 
@@ -340,7 +339,7 @@ const SmartCampusProject = () => {
 
       {/* ================= TECHNOLOGY STACK ================= */}
 
-      <section className="py-24 bg-white dark:bg-slate-950">
+      <section className="py-24 bg-amber-50 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-5 py-2 rounded-full bg-cyan-100 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 font-semibold">
@@ -381,7 +380,7 @@ const SmartCampusProject = () => {
 
       {/* ================= CHALLENGES ================= */}
 
-      <section className="py-24 bg-slate-50 dark:bg-slate-950">
+      <section className="py-24 bg-amber-50 dark:bg-slate-950">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <span className="inline-block px-5 py-2 rounded-full bg-red-100 dark:bg-red-500/10 text-red-700 dark:text-red-400 font-semibold">
@@ -401,7 +400,7 @@ const SmartCampusProject = () => {
 
           <div className="space-y-8">
             {/* Challenge 1 */}
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
               <h3 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
                 Challenge 01 — Preventing Double Bookings
               </h3>
@@ -425,7 +424,7 @@ const SmartCampusProject = () => {
             </div>
 
             {/* Challenge 2 */}
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
               <h3 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
                 Challenge 02 — Managing Different User Roles
               </h3>
@@ -448,7 +447,7 @@ const SmartCampusProject = () => {
             </div>
 
             {/* Challenge 3 */}
-            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
               <h3 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
                 Challenge 03 — Designing a User-Friendly Interface
               </h3>
@@ -476,7 +475,7 @@ const SmartCampusProject = () => {
 
       {/* ================= END OF PART 3 ================= */}
 
-      <section className="py-24 bg-white dark:bg-slate-950 transition-colors duration-300">
+      <section className="py-24 bg-amber-50 dark:bg-slate-950 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-6">
           {/* Heading */}
 
