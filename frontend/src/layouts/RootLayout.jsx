@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { motion } from "framer-motion";
+import ScrollToTop from "../components/ScrollToTop";
 
 const RootLayout = () => {
   return (
@@ -12,9 +12,9 @@ const RootLayout = () => {
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35 }}
     >
+      <ScrollToTop />
       <Navbar />
       <Outlet />
-      <Footer />
     </motion.div>
   );
 };

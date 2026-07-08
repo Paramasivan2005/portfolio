@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <motion.footer
       id="footer"
-      className="pt-10 border-t border-slate-200 bg-white dark:bg-slate-950 dark:border-slate-800 transition-colors duration-300"
+      className="pt-10 border-t border-slate-200 bg-amber-50 dark:bg-slate-950 dark:border-slate-800 transition-colors duration-300"
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}

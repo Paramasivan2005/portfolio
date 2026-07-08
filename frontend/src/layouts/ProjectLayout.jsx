@@ -3,6 +3,7 @@ import ProjectNavbar from "../components/ProjectNavbar";
 import { Outlet } from "react-router-dom";
 import ProjectFooter from "../components/ProjectFooter";
 import { motion } from "framer-motion";
+import ScrollToTop from "../components/ScrollToTop";
 
 const ProjectLayout = () => {
   return (
@@ -11,7 +12,9 @@ const ProjectLayout = () => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.35 }}
+      className="bg-amber-50 dark:bg-gray-950"
     >
+      <ScrollToTop />
       <ProjectNavbar />
       <Outlet />
       <ProjectFooter />

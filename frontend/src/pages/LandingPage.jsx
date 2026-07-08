@@ -14,6 +14,7 @@ const LandingPage = () => {
         <Skills />
         <Projects />
         <Contact />
+        <Footer />
     </div>
   )
 }
