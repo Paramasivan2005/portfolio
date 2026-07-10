@@ -1,17 +1,557 @@
-import React from 'react'
-import { useLoading } from "../context/LoadingContext"
+import React from "react";
+import {
+  FaUniversity,
+  FaArrowLeft,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaUsers,
+  FaLaptopHouse,
+  FaClipboardList,
+  FaCalendarCheck,
+  FaUserShield,
+  FaBell,
+  FaChartLine,
+  FaDatabase,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaLightbulb,
+  FaCheckCircle,
+  FaRocket,
+  FaCode,
+} from "react-icons/fa";
+import { useLoading } from "../context/LoadingContext";
 import { useEffect } from "react";
 
-const Portfolio = () => {
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiPostgresql,
+  SiJavascript,
+} from "react-icons/si";
+import { Link } from "react-router-dom";
+import portfolioImg from "../assets/portfolio-img.png"; // Change your screenshot path
+
+const SmartCampusProject = () => {
+  const techStack = [
+    {
+      icon: <FaReact />,
+      name: "React.js",
+      color: "text-sky-500",
+      description:
+        "Developed an interactive single-page application using reusable React components and React Router.",
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: "Tailwind CSS",
+      color: "text-cyan-500",
+      description:
+        "Built a clean, responsive, and modern interface with utility-first styling.",
+    },
+    {
+      icon: <FaNodeJs />,
+      name: "Node.js",
+      color: "text-green-600",
+      description:
+        "Handled backend logic, authentication, API development, and business operations.",
+    },
+    {
+      icon: <SiExpress />,
+      name: "Express.js",
+      color: "text-gray-700",
+      description:
+        "Created secure REST APIs for authentication, URL management, and user operations.",
+    },
+    {
+      icon: <SiPostgresql />,
+      name: "PostgreSQL",
+      color: "text-blue-700",
+      description:
+        "Stored user accounts, shortened URLs, and application data with optimized relational database design.",
+    },
+    {
+      icon: <SiJavascript />,
+      name: "JavaScript",
+      color: "text-yellow-500",
+      description:
+        "Implemented application logic, form validation, asynchronous requests, and dynamic UI behavior.",
+    },
+    {
+      icon: <FaGitAlt />,
+      name: "Git & GitHub",
+      color: "text-orange-600",
+      description:
+        "Managed version control and project collaboration through Git and GitHub.",
+    },
+  ];
+
+  const features = [
+    {
+      icon: <FaClipboardList />,
+      title: "Project Showcase",
+      description:
+        "Displays all my major projects with detailed descriptions, screenshots, technology stack, GitHub repository, and live demo links.",
+    },
+    {
+      icon: <FaCalendarCheck />,
+      title: "Responsive Design",
+      description:
+        "Optimized for desktops, tablets, and mobile devices to provide a seamless browsing experience on every screen size.",
+    },
+    {
+      icon: <FaUserShield />,
+      title: "Dark & Light Theme",
+      description:
+        "Supports both light and dark modes with smooth theme switching while preserving user preference.",
+    },
+    {
+      icon: <FaBell />,
+      title: "Contact Form",
+      description:
+        "Integrated contact form connected to the backend, allowing visitors and recruiters to send messages directly.",
+    },
+    {
+      icon: <FaChartLine />,
+      title: "Smooth Animations",
+      description:
+        "Implemented Framer Motion animations and interactive transitions to create an engaging user experience.",
+    },
+    {
+      icon: <FaDatabase />,
+      title: "Resume & Social Links",
+      description:
+        "Provides quick access to my resume, GitHub, LinkedIn, and other professional profiles.",
+    },
+  ];
 
   const loading = useLoading();
-  
-    useEffect(() => {
-      loading.current.complete();
-    }, []);
-  return (
-    <div>Portfolio</div>
-  )
-}
 
-export default Portfolio
+  useEffect(() => {
+    loading.current.complete();
+  }, []);
+  return (
+    <div className="min-h-screen bg-amber-50 dark:bg-slate-950 text-white">
+      {/* ================= HERO SECTION ================= */}
+
+      <section className="relative overflow-hidden border-b border-white/10">
+        {/* Background Blur */}
+        <div className="absolute -top-40 -left-32 w-96 h-96 bg-cyan-500/20 blur-[140px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-600/20 blur-[150px] rounded-full"></div>
+
+        <div className="max-w-7xl mx-auto px-6 py-24">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT */}
+
+            <div>
+              <span className="inline-flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/30 px-4 py-2 rounded-full text-cyan-400 text-sm font-semibold mb-6">
+                <FaUniversity />
+                Portfolio Website
+              </span>
+
+              <h1 className="text-5xl md:text-6xl font-black leading-tight text-gray-600 dark:text-slate-300">
+                Personal
+                <br />
+                <span className="text-cyan-400">Portfolio Website</span>
+              </h1>
+
+              <p className="mt-8 text-slate-600 dark:text-slate-300 leading-8 text-lg">
+                This portfolio website showcases my skills, projects, and
+                experience as a Full Stack Developer. It is designed to provide
+                recruiters and visitors with an interactive overview of my work,
+                technical expertise, and development journey. The application
+                features responsive layouts, smooth animations, dark mode
+                support, project showcases, downloadable resume, and an
+                integrated contact form connected to a backend API.
+              </p>
+
+              <div className="flex flex-wrap gap-4 mt-10">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 bg-cyan-500 hover:bg-cyan-600 px-6 py-4 rounded-xl font-semibold transition"
+                >
+                  <FaExternalLinkAlt />
+                  Live Demo
+                </a>
+
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-3 border border-slate-300 text-slate-800 hover:border-cyan-500 hover:text-cyan-500 dark:border-white/20 dark:text-white dark:hover:border-cyan-400 dark:hover:text-cyan-400 px-6 py-4 rounded-xl transition"
+                >
+                  <FaGithub />
+                  Source Code
+                </a>
+              </div>
+
+              {/* Stats */}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
+                <div className="bg-white dark:bg-white/5 backdrop-blur-lg border border-slate-200 dark:border-white/10 rounded-2xl p-5 shadow-sm dark:shadow-none transition">
+                  <FaUsers className="text-3xl text-cyan-500 mb-3" />
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    100%
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    Responsive Design
+                  </p>
+                </div>
+
+                <div className="bg-white dark:bg-white/5 backdrop-blur-lg border border-slate-200 dark:border-white/10 rounded-2xl p-5 shadow-sm dark:shadow-none transition">
+                  <FaLaptopHouse className="text-3xl text-cyan-500 mb-3" />
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    10+
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    Projects Showcase
+                  </p>
+                </div>
+
+                <div className="bg-white dark:bg-white/5 backdrop-blur-lg border border-slate-200 dark:border-white/10 rounded-2xl p-5 shadow-sm dark:shadow-none transition">
+                  <FaUniversity className="text-3xl text-cyan-500 mb-3" />
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                    Modern
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">
+                    Portfolio
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT */}
+
+            <div className="relative">
+              <div className="absolute inset-0 bg-cyan-500/20 blur-3xl "></div>
+
+              <div className="flex flex-col gap-10 relative rounded-3xl overflow-hidden border border-white/10 bg-white dark:bg-slate-900/5 backdrop-blur-xl shadow-2xl">
+                <img
+                  src={portfolioImg}
+                  alt="Smart Campus"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                />
+                <img
+                  src={portfolioImg}
+                  alt="Smart Campus"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                />
+                <img
+                  src={portfolioImg}
+                  alt="Smart Campus"
+                  className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= PROJECT OVERVIEW ================= */}
+
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-cyan-600 dark:text-cyan-400 uppercase tracking-widest font-semibold">
+              Project Overview
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold mt-4 text-slate-900 dark:text-white">
+              Building a Modern Developer Portfolio
+            </h2>
+
+            <p className="max-w-4xl mx-auto mt-8 text-slate-600 dark:text-slate-300 leading-8 text-lg">
+              The goal of this portfolio was to build a professional platform
+              that highlights my technical skills, projects, and development
+              experience in a clean and engaging way. Rather than creating a
+              simple personal website, I focused on building a production-style
+              application with reusable React components, responsive layouts,
+              smooth page transitions, dark mode support, and backend
+              integration for the contact form. Every section was carefully
+              designed to improve user experience while demonstrating my
+              frontend and backend development skills.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-10 bg-amber-50 dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Heading */}
+
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 rounded-full bg-cyan-100 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 font-semibold">
+              Key Features
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-6">
+              Professional Features Built for
+              <span className="text-cyan-600"> My Portfolio</span>
+            </h2>
+
+            <p className="text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mt-6 leading-8 text-lg">
+              The portfolio focuses on showcasing my development skills through
+              modern UI design, responsive layouts, reusable components, smooth
+              animations, and backend integration. Every section is designed to
+              provide recruiters with a clear understanding of my technical
+              abilities and project experience.
+            </p>
+          </div>
+
+          {/* Feature Cards */}
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="group bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-2xl hover:-translate-y-3 transition-all duration-500"
+              >
+                {/* Icon */}
+
+                <div className="w-16 h-16 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-3xl mb-6 group-hover:bg-cyan-600 group-hover:text-white transition-all duration-500">
+                  {feature.icon}
+                </div>
+
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                  {feature.title}
+                </h3>
+
+                <p className="text-slate-600 dark:text-slate-300 leading-8">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= TECHNOLOGY STACK ================= */}
+
+      <section className="py-24 bg-amber-50 dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-5 py-2 rounded-full bg-cyan-100 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 font-semibold">
+              Technology Stack
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mt-6">
+              Technologies Used
+            </h2>
+
+            <p className="mt-5 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-8">
+              The portfolio was developed using modern web technologies
+              including React, Tailwind CSS, Node.js, Express.js, PostgreSQL,
+              and JavaScript to deliver a fast, responsive, and scalable user
+              experience.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-7">
+            {techStack.map((tech, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl p-7 shadow-sm hover:shadow-xl dark:hover:shadow-cyan-500/10 transition-all duration-300"
+              >
+                <div className={`text-5xl mb-5 ${tech.color}`}>{tech.icon}</div>
+
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+                  {tech.name}
+                </h3>
+
+                <p className="text-slate-600 dark:text-slate-300 leading-7">
+                  {tech.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= CHALLENGES ================= */}
+
+      <section className="py-24 bg-amber-50 dark:bg-slate-950">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="inline-block px-5 py-2 rounded-full bg-red-100 dark:bg-red-500/10 text-red-700 dark:text-red-400 font-semibold">
+              Challenges & Solutions
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-bold mt-6 text-slate-900 dark:text-white">
+              Challenges I Faced
+            </h2>
+
+            <p className="mt-5 text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-8">
+              Every real-world project comes with challenges. Developing this
+              application helped me improve my problem-solving abilities and
+              understand practical software development workflows.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {/* Challenge 1 */}
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
+                Challenge 01 - Designing an Attractive User Interface
+              </h3>
+
+              <p className="text-slate-600 dark:text-slate-300 leading-8">
+                Creating a clean, modern, and responsive design while
+                maintaining consistency across all sections was one of the
+                biggest challenges.
+              </p>
+
+              <div className="mt-5 p-5 rounded-2xl bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-700">
+                <h4 className="font-bold text-green-700 dark:text-green-400 mb-2">
+                  ✔ Solution
+                </h4>
+
+                <p className="text-slate-600 dark:text-slate-300 leading-7">
+                  Used reusable React components, Tailwind CSS utilities, and
+                  consistent spacing, typography, and color palettes to achieve
+                  a professional design.
+                </p>
+              </div>
+            </div>
+
+            {/* Challenge 2 */}
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
+                Challenge 02 — Smooth Navigation & User Experience
+              </h3>
+
+              <p className="text-slate-600 dark:text-slate-300 leading-8">
+                Making page transitions smooth without affecting application
+                performance required careful implementation.
+              </p>
+
+              <div className="mt-5 p-5 rounded-2xl bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-700">
+                <h4 className="font-bold text-green-700 dark:text-green-400 mb-2">
+                  ✔ Solution
+                </h4>
+
+                <p className="text-slate-600 dark:text-slate-300 leading-7">
+                  Implemented Framer Motion animations, loading transitions, and
+                  optimized component rendering for a seamless browsing
+                  experience.
+                </p>
+              </div>
+            </div>
+
+            {/* Challenge 3 */}
+            <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-3xl p-8 shadow-sm hover:shadow-xl dark:hover:shadow-red-500/10 transition-all duration-300">
+              <h3 className="text-2xl font-bold text-red-700 dark:text-red-400 mb-4">
+                Challenge 03 — Backend Contact Form Integration
+              </h3>
+
+              <p className="text-slate-600 dark:text-slate-300 leading-8">
+                Connecting the frontend contact form with the backend while
+                ensuring validation and reliable email delivery required proper
+                API integration.
+              </p>
+
+              <div className="mt-5 p-5 rounded-2xl bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-700">
+                <h4 className="font-bold text-green-700 dark:text-green-400 mb-2">
+                  ✔ Solution
+                </h4>
+
+                <p className="text-slate-600 dark:text-slate-300 leading-7">
+                  Built REST APIs using Express.js, stored contact messages in
+                  PostgreSQL, validated user input, and integrated email
+                  notifications for successful message delivery.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= END OF PART 3 ================= */}
+
+      <section className="py-24 bg-amber-50 dark:bg-slate-950 transition-colors duration-300">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Heading */}
+
+          <div className="text-center mb-16">
+            <span className="inline-flex items-center px-5 py-2 rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-500/10 dark:text-cyan-400 font-semibold border border-cyan-200 dark:border-cyan-500/20">
+              Learning Experience
+            </span>
+
+            <h2 className="mt-6 text-4xl md:text-5xl font-bold text-slate-900 dark:text-white">
+              What I Learned
+            </h2>
+
+            <p className="mt-5 max-w-3xl mx-auto text-lg leading-8 text-slate-600 dark:text-slate-400">
+              Developing this project strengthened both my technical knowledge
+              and problem-solving abilities. It provided valuable hands-on
+              experience in building a complete full-stack application from
+              planning to deployment.
+            </p>
+          </div>
+
+          {/* Cards */}
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Card 1 */}
+
+            <div className="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-100 text-cyan-600 dark:bg-cyan-500/10 dark:text-cyan-400 transition-colors">
+                <FaLightbulb className="text-3xl" />
+              </div>
+
+              <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+                Technical Skills
+              </h3>
+
+              <ul className="space-y-5">
+                {[
+                  "Built a production-ready portfolio using React and Tailwind CSS.",
+                  "Improved reusable component architecture.",
+                  "Integrated frontend with Express.js APIs.",
+                  "Enhanced responsive design and accessibility.",
+                ].map((item, index) => (
+                  <li key={index} className="flex gap-3">
+                    <FaCheckCircle className="mt-1 text-green-500 shrink-0" />
+                    <span className="text-slate-600 dark:text-slate-400 leading-7">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Card 2 */}
+
+            <div className="group rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-cyan-100 text-cyan-600 dark:bg-cyan-500/10 dark:text-cyan-400 transition-colors">
+                <FaRocket className="text-3xl" />
+              </div>
+
+              <h3 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
+                Professional Growth
+              </h3>
+
+              <ul className="space-y-5">
+                {[
+                  "Improved UI/UX design thinking.",
+                  "Learned how to present projects professionally.",
+                  "Strengthened deployment and debugging skills.",
+                  "Understood how recruiters evaluate developer portfolios.",
+                ].map((item, index) => (
+                  <li key={index} className="flex gap-3">
+                    <FaCheckCircle className="mt-1 text-green-500 shrink-0" />
+                    <span className="text-slate-600 dark:text-slate-400 leading-7">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default SmartCampusProject;
