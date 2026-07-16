@@ -232,7 +232,7 @@ const SmartCampusProject = () => {
                   alt="Smart Campus"
                   className="w-full h-full object-cover hover:scale-105 transition duration-700"
                 />
-                <img
+                {/* <img
                   src={portfolioImg}
                   alt="Smart Campus"
                   className="w-full h-full object-cover hover:scale-105 transition duration-700"
@@ -241,7 +241,7 @@ const SmartCampusProject = () => {
                   src={portfolioImg}
                   alt="Smart Campus"
                   className="w-full h-full object-cover hover:scale-105 transition duration-700"
-                />
+                /> */}
               </div>
             </div>
           </div>

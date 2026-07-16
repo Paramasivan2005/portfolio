@@ -18,6 +18,7 @@ import { useLoading } from "../context/LoadingContext"
 import { useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
+import qr from "../assets/qr-ss.png"
 
 const features = [
   [
@@ -65,7 +66,7 @@ export default function SmartTaskManager() {
     loading.current.complete();
   }, []);
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-white">
+    <div className="min-h-screen bg-amber-50 dark:bg-slate-950 text-slate-800 dark:text-white">
       <section className="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-10 items-center">
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -111,7 +112,7 @@ export default function SmartTaskManager() {
         <motion.img
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
-          src="/projects/taskmanager.png"
+          src={qr}
           className="rounded-3xl border border-slate-700"
         />
       </section>
@@ -168,7 +169,7 @@ export default function SmartTaskManager() {
 
       <section className="max-w-7xl mx-auto px-6 py-16 grid lg:grid-cols-2 gap-8">
         <div className="bg-slate-900 rounded-2xl p-8">
-          <h2 className="text-3xl font-bold">Challenges Faced</h2>
+          <h2 className="text-3xl font-bold text-white">Challenges Faced</h2>
           <ul className="mt-6 space-y-3 list-disc pl-5 text-slate-300">
             <li>Handling empty input validation.</li>
             <li>Updating QR code dynamically after every user input.</li>
@@ -177,7 +178,7 @@ export default function SmartTaskManager() {
           </ul>
         </div>
         <div className="bg-slate-900 rounded-2xl p-8">
-          <h2 className="text-3xl font-bold flex items-center gap-2">
+          <h2 className="text-3xl font-bold flex items-center gap-2 text-white">
             <FaLightbulb />
             What I Learned
           </h2>
@@ -188,7 +189,7 @@ export default function SmartTaskManager() {
             Tailwind CSS. I also gained practical experience in working with
             third-party APIs and handling dynamic user input efficiently.
           </p>
-          <h3 className="font-bold mt-8 flex gap-2 items-center">
+          <h3 className="font-bold mt-8 flex gap-2 items-center text-white">
             <FaCode />
             Future Improvements
           </h3>

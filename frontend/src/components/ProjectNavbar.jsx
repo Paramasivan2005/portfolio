@@ -45,7 +45,7 @@ const ProjectNavbar = () => {
       <div className="hidden md:block my-auto">
         <Link
           to="/"
-          className="flex items-center gap-2 bg-white dark:bg-gray-800 shadow-md dark:shadow-gray-700 px-6 py-2 rounded-2xl text-black dark:text-white hover:text-pink-600 transition"
+          className="navber flex items-center gap-2 bg-white dark:bg-gray-800 shadow-md dark:shadow-gray-700 px-6 py-2 rounded-2xl text-black dark:text-white hover:text-pink-600 transition"
         >
           <IoArrowBack />
           Back to Portfolio
