@@ -79,7 +79,7 @@ const projects = [
     title: "Income Expense Tracker",
     img: expense,
     desc: "A personal finance application to track income, expenses, and spending habits.",
-    tech: ["HTML", "Tailwind", "Javascript"],
+    tech: ["HTML", "Javascript"],
     github: "https://github.com/Paramasivan2005/income-expense-tracker.git",
     live: "https://income-expense-tracker-bvoxbqmc2-paramasivans-projects.vercel.app/",
     slug: "income-expense-tracker",
@@ -205,7 +205,7 @@ const Projects = () => {
                     stiffness: 250,
                   },
                 }}
-                className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 py-10 hover:shadow-2xl transition-all duration-500"
+                className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-140 hover:shadow-2xl transition-all duration-500"
               >
                 {/* Image */}
 
