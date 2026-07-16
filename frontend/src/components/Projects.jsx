@@ -205,7 +205,7 @@ const Projects = () => {
                     stiffness: 250,
                   },
                 }}
-                className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 h-130 hover:shadow-2xl transition-all duration-500"
+                className="dark:bg-gray-800 dark:border-gray-700 bg-neutral-200 rounded-xl border p-4 py-10 hover:shadow-2xl transition-all duration-500"
               >
                 {/* Image */}
 
